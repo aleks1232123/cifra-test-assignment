@@ -1,14 +1,17 @@
 .tableContainer {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   width: 100vw;
   margin-top: 100px;
   margin-bottom: 200px;
+  height: 50vh;
+  overflow: scroll;
 }
 
 .table {
   border-collapse: collapse;
-  min-width: 70vw;
+  width: 80vw;
 }
 
 .tableHeader {
@@ -19,5 +22,12 @@
 
 th {
   padding: 20px;
+}
+
+@media (max-width: 767px) {
+  .table {
+    border-collapse: collapse;
+    width: 100vw;
+  }
 }
 

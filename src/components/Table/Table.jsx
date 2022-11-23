@@ -6,7 +6,7 @@ export default function Table(props) {
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
-        <tbody>
+        <thead>
           <tr className={styles.tableHeader}>
             <th>#</th>
             <th>Title</th>
@@ -16,7 +16,7 @@ export default function Table(props) {
           {props.list.map((item) => (
             <TableItem item={item} key={item.id} />
           ))}
-        </tbody>
+        </thead>
       </table>
     </div>
   );

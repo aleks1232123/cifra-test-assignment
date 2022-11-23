@@ -1,0 +1,28 @@
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  border-bottom: 1px solid lightgray;
+  height: 50px;
+}
+
+.navbarLogo{
+  margin-left: 20px;
+  text-align: center;
+}
+
+.navbarPageInfo{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: larger;
+  color: orangered;
+}
+
+.navbarBurgerMenu{
+  margin-right: 20px;
+}

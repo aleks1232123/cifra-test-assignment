@@ -1,5 +1,6 @@
 .newItemBtn {
   background-color: orangered;
+  position: absolute;
   color: white;
   font-size: 18px;
   width: 200px;
@@ -8,6 +9,7 @@
   border: 0;
   border-radius: 3px;
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
+  bottom: 50px;
 }
 
 .newItemBtn:hover {

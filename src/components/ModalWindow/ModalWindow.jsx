@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
 import Button from "../Button/Button";
+import ModalCloseButton from "../ModalCloseButton/ModalCloseButton";
 import styles from "./ModalWindow.module.css";
 
-export default function Modal({toggleModal, addNewTableItem, modal}) {
+export default function Modal({ toggleModal, addNewTableItem, modal }) {
   // if (modal) {
   //   document.body.classList.add("active-modal");
   // } else {
   //   document.body.classList.remove("active-modal");
   // }
+
+  const titleInputRef = useRef();
+  const priceInputRef = useRef();
+  const dateTimeInputRef = useRef();
 
   return (
     <>
@@ -15,19 +20,44 @@ export default function Modal({toggleModal, addNewTableItem, modal}) {
         <div className={styles.modal}>
           <div onClick={toggleModal} className={styles.overlay}></div>
           <div className={styles.modalContent}>
-            <h2>New Item</h2>
+            <div className={styles.modalHeader}>
+              <h2>New Item</h2>
+            </div>
             <form>
-              <label for="fname">Title</label>
-              <input type="text" id="fname" name="firstname" placeholder="Your name.."></input>
-              <label for="fname">Price</label>
-              <input type="text" id="fname" name="firstname" placeholder="Your name.."></input>
-              <label for="fname">Date and Time</label>
-              <input type="text" id="fname" name="firstname" placeholder="Your name.."></input>
+              <label>Title</label>
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Add Title..."
+                ref={titleInputRef}
+              ></input>
+              <label>Price</label>
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Add Price..."
+                ref={priceInputRef}
+              ></input>
+              <label>Date and Time</label>
+              <input
+                type="text"
+                id="fname"
+                name="firstname"
+                placeholder="Add Date and Time..."
+                ref={dateTimeInputRef}
+              ></input>
             </form>
-            <button className={styles.closeModal} onClick={toggleModal}>
+            {/* <button className={styles.closeModal} onClick={toggleModal}>
               CLOSE
-            </button>
-            <Button title='Add Item' theme='addItemBtn' action={addNewTableItem} />
+            </button> */}
+            <ModalCloseButton toggleModal={toggleModal}/>
+            <Button
+              title="Add Item"
+              theme="addItemBtn"
+              action={() => addNewTableItem({titleInputRef, priceInputRef, dateTimeInputRef})}
+            />
           </div>
         </div>
       )}
