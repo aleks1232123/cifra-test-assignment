@@ -1,0 +1,23 @@
+.tableContainer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 100px;
+  margin-bottom: 200px;
+}
+
+.table {
+  border-collapse: collapse;
+  min-width: 70vw;
+}
+
+.tableHeader {
+  text-align: left;
+  border-top: 1px solid lightgray;
+  margin-right: 20px;
+}
+
+th {
+  padding: 20px;
+}
+

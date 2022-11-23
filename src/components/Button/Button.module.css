@@ -1,0 +1,31 @@
+.newItemBtn {
+  background-color: orangered;
+  color: white;
+  font-size: 18px;
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.newItemBtn:hover {
+  transform: scale(1.05);
+}
+
+.addItemBtn {
+  background-color: orangered;
+  color: white;
+  font-size: 18px;
+  width: 160px;
+  height: 35px;
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.addItemBtn:hover {
+  transform: scale(1.05);
+}
