@@ -1,9 +1,8 @@
-import React from 'react';
-import styles from './ModalCloseButton.module.css'
+import React from "react";
+import styles from "./ModalCloseButton.module.css";
 
-export default function ModalCloseButton({toggleModal}) {
+export default function ModalCloseButton({ clearAndToggleModal }) {
   return (
-    <div className={styles.closeModal} onClick={toggleModal}>
-    </div>
-  )
+    <div className={styles.closeModal} onClick={clearAndToggleModal}></div>
+  );
 }

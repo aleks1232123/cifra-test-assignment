@@ -21,6 +21,7 @@
   text-align: center;
   font-size: larger;
   color: orangered;
+  user-select: none;
 }
 
 .navbarBurgerMenu{

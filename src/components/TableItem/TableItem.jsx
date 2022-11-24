@@ -1,7 +1,7 @@
 import React from "react";
-import styles from './TableItem.module.css'
+import styles from "./TableItem.module.css";
 
-export default function TableItem({item}) {
+export default function TableItem({ item }) {
   return (
     <tr className={styles.tableItem}>
       <td>{item.id}</td>

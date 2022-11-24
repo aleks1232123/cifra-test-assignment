@@ -1,24 +1,66 @@
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import ModalCloseButton from "../ModalCloseButton/ModalCloseButton";
 import styles from "./ModalWindow.module.css";
 
 export default function Modal({ toggleModal, addNewTableItem, modal }) {
-  // if (modal) {
-  //   document.body.classList.add("active-modal");
-  // } else {
-  //   document.body.classList.remove("active-modal");
-  // }
+  const [title, setTitle] = useState("");
+  const [price, setPrice] = useState("");
+  const [dateTime, setDateTime] = useState("");
+  const [titleError, setTitleError] = useState("");
+  const [priceError, setPriceError] = useState("");
+  const [dateTimeError, setDateTimeError] = useState("");
 
-  const titleInputRef = useRef();
-  const priceInputRef = useRef();
-  const dateTimeInputRef = useRef();
+  const addItemButtonHandler = () => {
+    let errorCounter = 0;
+    if (!title) {
+      setTitleError("Title field can not be empty");
+      errorCounter++;
+    } else {
+      setTitleError("");
+    }
+    if (!price) {
+      setPriceError("Price field can not be empty");
+      errorCounter++;
+    } else if (isNaN(Number(price))) {
+      setPriceError("Price is not a number");
+      errorCounter++;
+    } else {
+      setPriceError("");
+    }
+    if (!dateTime) {
+      setDateTimeError("Date & Time field can not be empty");
+      errorCounter++;
+    } else {
+      setDateTimeError("");
+    }
+    console.log(errorCounter);
+    if (errorCounter) return;
+    else {
+      addNewTableItem({
+        title,
+        price,
+        dateTime,
+      });
+      clearAndToggleModal();
+    }
+  };
+
+  const clearAndToggleModal = () => {
+    setTitle("");
+    setPrice("");
+    setDateTime("");
+    setTitleError("");
+    setPriceError("");
+    setDateTimeError("");
+    toggleModal();
+  };
 
   return (
     <>
       {modal && (
         <div className={styles.modal}>
-          <div onClick={toggleModal} className={styles.overlay}></div>
+          <div onClick={clearAndToggleModal} className={styles.overlay}></div>
           <div className={styles.modalContent}>
             <div className={styles.modalHeader}>
               <h2>New Item</h2>
@@ -27,37 +69,65 @@ export default function Modal({ toggleModal, addNewTableItem, modal }) {
               <label>Title</label>
               <input
                 type="text"
-                id="fname"
-                name="firstname"
+                name="title"
                 placeholder="Add Title..."
-                ref={titleInputRef}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
               ></input>
+              {titleError && (
+                <div
+                  style={{
+                    color: "red",
+                    position: "absolute",
+                    bottom: "275px",
+                  }}
+                >
+                  {titleError}
+                </div>
+              )}
               <label>Price</label>
               <input
                 type="text"
-                id="fname"
-                name="firstname"
+                name="price"
                 placeholder="Add Price..."
-                ref={priceInputRef}
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
               ></input>
+              {priceError && (
+                <div
+                  style={{
+                    color: "red",
+                    position: "absolute",
+                    bottom: "170px",
+                  }}
+                >
+                  {priceError}
+                </div>
+              )}
               <label>Date and Time</label>
               <input
-                type="text"
-                id="fname"
-                name="firstname"
+                type="datetime-local"
+                name="datetime"
                 placeholder="Add Date and Time..."
-                ref={dateTimeInputRef}
+                value={dateTime}
+                onChange={(e) => setDateTime(e.target.value)}
               ></input>
+              {dateTimeError && (
+                <div
+                  style={{ color: "red", position: "absolute", bottom: "65px" }}
+                >
+                  {dateTimeError}
+                </div>
+              )}
             </form>
-            {/* <button className={styles.closeModal} onClick={toggleModal}>
-              CLOSE
-            </button> */}
-            <ModalCloseButton toggleModal={toggleModal}/>
-            <Button
-              title="Add Item"
-              theme="addItemBtn"
-              action={() => addNewTableItem({titleInputRef, priceInputRef, dateTimeInputRef})}
-            />
+            <ModalCloseButton clearAndToggleModal={clearAndToggleModal} />
+            <div className={styles.addBtnContainer}>
+              <Button
+                title="Add Item"
+                theme="addItemBtn"
+                action={() => addItemButtonHandler()}
+              />
+            </div>
           </div>
         </div>
       )}

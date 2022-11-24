@@ -2,32 +2,53 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  width: 100vw;
   margin-top: 100px;
   margin-bottom: 200px;
-  height: 50vh;
+  width: 70vw;
+  height: 70vh;
   overflow: scroll;
 }
 
 .table {
   border-collapse: collapse;
-  width: 80vw;
+  width: 100%;
 }
 
 .tableHeader {
   text-align: left;
-  border-top: 1px solid lightgray;
   margin-right: 20px;
+  position: sticky;
+  top: 0;
+  background-color: lightgray;
 }
 
 th {
   padding: 20px;
 }
 
+#headerNumber {
+  width: 10px;
+}
+
+@media (min-width: 768px) and (max-width: 1400px){
+  .tableContainer {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    width: 90vw;
+    height: 70vh;
+  }
+}
+
 @media (max-width: 767px) {
+  .tableContainer {
+    margin-top: 100px;
+    margin-bottom: 200px;
+    width: 94vw;
+    height: 70vh;
+  }
+
   .table {
-    border-collapse: collapse;
-    width: 100vw;
+    font-size: 12px;
   }
 }
 

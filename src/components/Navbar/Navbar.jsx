@@ -1,14 +1,14 @@
 import React from "react";
 import styles from "./Navbar.module.css";
 
-export default function Navbar() {
+export default function Navbar({ clearTableList }) {
   return (
     <div className={styles.navbarContainer}>
       <div className={styles.navbarLogo}>
         STOCK<br></br>
         CENTER
       </div>
-      <div className={styles.navbarPageInfo}>
+      <div className={styles.navbarPageInfo} onClick={clearTableList}>
         <b>Items In Stock</b>
       </div>
       <div className={styles.navbarBurgerMenu}>

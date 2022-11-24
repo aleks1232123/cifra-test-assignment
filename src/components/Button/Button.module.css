@@ -17,6 +17,7 @@
 }
 
 .addItemBtn {
+  margin: 0 auto;
   background-color: orangered;
   color: white;
   font-size: 18px;

@@ -2,21 +2,23 @@ import React from "react";
 import TableItem from "../TableItem/TableItem";
 import styles from "./Table.module.css";
 
-export default function Table(props) {
+export default function Table({ list }) {
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
         <thead>
           <tr className={styles.tableHeader}>
-            <th>#</th>
-            <th>Title</th>
-            <th>Price, USD</th>
-            <th>Date and Time</th>
+            <th style={{ width: "10%" }}>#</th>
+            <th style={{ width: "40%" }}>Title</th>
+            <th style={{ width: "20%" }}>Price, USD</th>
+            <th style={{ width: "30%" }}>Date and Time</th>
           </tr>
-          {props.list.map((item) => (
+        </thead>
+        <tbody>
+          {list.map((item) => (
             <TableItem item={item} key={item.id} />
           ))}
-        </thead>
+        </tbody>
       </table>
     </div>
   );
