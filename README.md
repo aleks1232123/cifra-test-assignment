@@ -13,5 +13,9 @@
 На главной и единственный странице нас встречает такой интерфейс:
 <img width="1432" alt="image" src="https://user-images.githubusercontent.com/101048709/203712562-6ff14259-807d-4ede-841d-e716736751f7.png">
 
+По нажатию на кнопку "New Item" открывается модальное окно с формой для вводы данных о товаре:
+<img width="1432" alt="image" src="https://user-images.githubusercontent.com/101048709/203714409-44001fc2-2d77-4388-8f18-423af18c89eb.png">
+
+
 
 
