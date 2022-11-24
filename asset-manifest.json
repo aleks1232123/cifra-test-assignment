@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/cifra-test-assignment/static/css/main.b8d90d38.css",
+    "main.js": "/cifra-test-assignment/static/js/main.768b81f8.js",
+    "index.html": "/cifra-test-assignment/index.html",
+    "main.b8d90d38.css.map": "/cifra-test-assignment/static/css/main.b8d90d38.css.map",
+    "main.768b81f8.js.map": "/cifra-test-assignment/static/js/main.768b81f8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b8d90d38.css",
+    "static/js/main.768b81f8.js"
+  ]
+}
