@@ -33,8 +33,6 @@
 
 <img width="640" alt="image" src="https://user-images.githubusercontent.com/101048709/203717611-35f9338e-9d04-4781-ac1d-df74055dfaf9.png"><img width="640" alt="image" src="https://user-images.githubusercontent.com/101048709/203717758-459320dc-4e7b-4819-97ca-9ce007cf3fc6.png">
 
-***Спасибо за внимание***
-
 ![thats-all-folks-optical-art-ece4tkfgzlbep84s](https://user-images.githubusercontent.com/101048709/203719823-650bd6a0-b82c-4038-8a8c-26bf35984916.jpeg)
 
 
