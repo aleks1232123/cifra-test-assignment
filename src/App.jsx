@@ -38,14 +38,18 @@ function App() {
   };
 
   const clearTableList = () => {
-    console.log("123");
     setList([]);
   };
+
+  const deleteItem = (itemId) => {
+    const newList = list.filter((el) => el.id !== itemId);
+    setList(newList);
+  }
 
   return (
     <div className="App">
       <Navbar clearTableList={clearTableList} />
-      <Table list={list} />
+      <Table list={list} deleteItem={deleteItem}/>
       <Button title="New Item" theme="newItemBtn" action={toggleModal} />
       <ModalWindow
         toggleModal={toggleModal}
